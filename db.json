@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "email": "dcjd@gmail.com",
+      "password": "$2a$10$ukd6.eGeeVf97gEBoneqrOez2L1g5OW7bfG1jCcFVanurKIjvgt4u",
+      "firstname": "divya",
+      "lastname": "jadhav",
+      "id": 2
+    },
+    {
+      "email": "divya@gmail.com",
+      "password": "$2a$10$QPfKe/E79DQpil/gCXRnlOB2psmKZ.E1/BWU62pba7LlxrNdL85eG",
+      "firstname": "Divya",
+      "lastname": "Chadichal",
+      "id": 3
+    }
+  ],
+  "booksList": [
+    {
+      "id": 0,
+      "title": "Born A Crime",
+      "author": "Trevor Noah",
+      "description": "Trevor Noah’s unlikely path from apartheid South Africa to the desk of The Daily Show began with a criminal act: his birth.",
+      "published": "27 October 2017",
+      "name": "Born A Crime"
+    },
+    {
+      "id": 1,
+      "title": "Half of a Yellow Sun",
+      "author": "Chimamanda Ngozi",
+      "description": "With effortless grace, Chimamanda Ngozi Adichie illuminates a seminal moment in modern African history.",
+      "published": "4 January 1998",
+      "name": "Half of a Yellow Sun"
+    },
+    {
+      "id": 2,
+      "title": "Killing Commendatore",
+      "author": "Haruki Murakami",
+      "description": "Killing Commendatore, is a story of a thirty-something portrait painter in Tokyo is abandoned by his wife and finds himself holed up in the mountain home of a famous artist, Tomohiko Amada.",
+      "published": "16 April 2002"
+    }
+  ]
+}
