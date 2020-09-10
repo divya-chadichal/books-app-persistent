@@ -1,7 +1,5 @@
 
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AddBookComponent } from './home/components/add-book.component';
 
 const loginModule = () => import('./login/login.module').then(x => x.LoginModule);
 const registerModule = () => import('./register/register.module').then(x => x.RegisterModule);
@@ -26,6 +24,5 @@ const routes: Routes = [
     loadChildren: homeModule
   }
 ];
-
 
 export const AppRoutingModule = RouterModule.forRoot(routes);

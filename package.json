@@ -5,13 +5,15 @@
     "ng": "ng",
     "start": "concurrently \"ng serve\" \"json-server-auth --watch db.json\"",
     "build": "ng build",
-    "test": "ng test",
+    "test": "jest --coverage",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "test:watch": "jest --watch"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.1.0",
+    "@angular/cdk": "^10.2.0",
     "@angular/common": "~10.1.0",
     "@angular/compiler": "~10.1.0",
     "@angular/core": "~10.1.0",
@@ -19,6 +21,7 @@
     "@angular/platform-browser": "~10.1.0",
     "@angular/platform-browser-dynamic": "~10.1.0",
     "@angular/router": "~10.1.0",
+    "@briebug/jest-schematic": "^2.2.0",
     "@ngrx/effects": "^10.0.0",
     "@ngrx/entity": "^10.0.0",
     "@ngrx/router-store": "^10.0.0",
@@ -37,19 +40,53 @@
     "@angular/compiler-cli": "~10.1.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jest": "26.0.13",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
+    "jest": "26.4.2",
+    "jest-preset-angular": "8.3.1",
     "json-server-auth": "^2.0.2",
-    "karma": "~5.0.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~3.0.2",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.0.2"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "<rootDir>/tsconfig.spec.json",
+        "stringifyContentPathRegex": "\\.html$",
+        "astTransformers": {
+          "before": [
+            "jest-preset-angular/build/InlineFilesTransformer",
+            "jest-preset-angular/build/StripStylesTransformer"
+          ]
+        }
+      }
+    },
+    "moduleNameMapper": {
+      "@app/(.*)": "<rootDir>/src/app/$1",
+      "@assets/(.*)": "<rootDir>/src/assets/$1",
+      "@core/(.*)": "<rootDir>/src/app/core/$1",
+      "@env": "<rootDir>/src/environments/environment",
+      "@src/(.*)": "<rootDir>/src/src/$1",
+      "@state/(.*)": "<rootDir>/src/app/state/$1"
+    },
+    "preset": "jest-preset-angular",
+    "roots": [
+      "src"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setup-jest.ts"
+    ],
+    "snapshotSerializers": [
+      "jest-preset-angular/build/AngularSnapshotSerializer.js",
+      "jest-preset-angular/build/HTMLCommentSerializer.js"
+    ],
+    "transform": {
+      "^.+\\.(ts|js|html)$": "ts-jest"
+    }
   }
 }

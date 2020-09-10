@@ -19,8 +19,3 @@ export const getBookDetails = createSelector(
     getCurrentBookId,
     state => state.entities[state.selectedBookId]
 );
-
-export const areBooksLoaded = createSelector(
-  booksFeatureSelector,
-  state => state.booksLoaded
-);

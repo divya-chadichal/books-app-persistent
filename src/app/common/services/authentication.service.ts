@@ -4,8 +4,6 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
-var users = [];
-
 @Injectable({
   providedIn: 'root'
 })
@@ -19,6 +17,5 @@ export class AuthenticationService {
     .pipe(map(data => {
         return data;
     }));
-
   }
 }

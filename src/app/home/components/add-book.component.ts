@@ -7,7 +7,8 @@ import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-add-book',
-  templateUrl: './add-book.component.html'
+  templateUrl: './add-book.component.html',
+  styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
 
@@ -17,14 +18,11 @@ export class AddBookComponent implements OnInit {
   }
 
   onSubmit(submittedForm) {
-    console.log(submittedForm.value);
-
     if (submittedForm.invalid) {
       return;
     }
 
     const book: Book = {id: uuid.v4(), title: submittedForm.value.title, author: submittedForm.value.author, description: submittedForm.value.description, published: submittedForm.value.published};
     this.store.dispatch(addBook({book}));
-
   }
 }

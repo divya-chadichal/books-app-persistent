@@ -15,7 +15,7 @@ export class RegisterUserComponent implements OnInit {
   form: FormGroup;
   submitted = false;
   user: RegisterUser = new RegisterUser();
-  public registerResponse;
+  registerResponse;
   error : string;
 
   constructor(private store : Store, private router : Router, private formBuilder : FormBuilder) { }

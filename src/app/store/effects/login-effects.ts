@@ -21,9 +21,8 @@ export class UserEffects {
     @Effect()
     logout$ = this.actions$.pipe(
       ofType(LoginActions.logout),
-      mergeMap(() =>
-        LoginActions.logoutSuccess)
-      );
+      mergeMap(() => LoginActions.logoutSuccess)
+    );
  
   constructor(private actions$: Actions, private authService: AuthenticationService) {}
 }

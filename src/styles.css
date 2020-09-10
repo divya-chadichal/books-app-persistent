@@ -1,4 +1,140 @@
 /* You can add global styles to this file, and also import other style files */
-.alert-danger {
+.alert-danger { 
     color: red;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI';
+    overflow: hidden;
+}
+  
+:host {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+input{
+    color: #333;
+    font-size: 1.2rem;
+    margin: 0 auto;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 90%;
+    height: 25px;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+}
+
+.btn{
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 0.7rem;
+    line-height: 1;
+    border-radius: .25rem;
+}
+
+.buttonPrimary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.buttonDanger {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.buttonSuccess {
+    background-color: #28a745;
+    color: white;
+}
+.containerPane{
+    width: 100%;
+    height: 100%;
+}
+
+.loginPane {
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+}
+
+.loginContent {
+    color: #0363a3;;
+    vertical-align: middle;
+    margin: auto;
+    width: 30%;
+    height: 65%;
+    background-color: #CAE1F9;
+    border:none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+
+.loginDiv {
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    margin-left: 20%;
+
+}
+
+.loginHeader {
+    text-align: center;
+}
+
+.dark-mode {
+    background-color:#B0B0B0;
+}
+
+.dark-mode-header {
+    background-color: #484848 !important;
+}
+
+.formPane {
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.formContent {
+    color: #0363a3;;
+    vertical-align: middle;
+    margin: auto;
+    width: 50%;
+    height: 70%;
+    background-color: #CAE1F9;
+    border:none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.30);
+}
+
+.formDiv {
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    margin-left: 20%;
+
+}
+
+.formHeader {
+    text-align: center;
+}
+
+textarea {
+    width: 90%;
+    height: 40px;
 }

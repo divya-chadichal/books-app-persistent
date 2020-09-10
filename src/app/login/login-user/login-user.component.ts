@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { login, loginSuccess } from 'src/app/store/actions/login-actions';
+import { login } from 'src/app/store/actions/login-actions';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { authSelector } from 'src/app/store/selectors/login-selector';
@@ -14,7 +14,7 @@ export class LoginUserComponent implements OnInit {
   form: FormGroup;
   submitted = false;
   error;
-  public loginResponse;
+  loginResponse;
 
   constructor(
       private formBuilder: FormBuilder,
@@ -51,7 +51,6 @@ export class LoginUserComponent implements OnInit {
       else {
         if(localStorage.getItem('accessToken')) localStorage.removeItem('accessToken');
         this.error = response.message;
-        ;
       }
   }
 }

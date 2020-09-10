@@ -1,77 +1,83 @@
-<h3>Books</h3>
-<button routerLink="add-book" routerLinkActive="active" style="float: right;" *ngIf="isLoggedIn">Add Book</button>
-<table *ngIf="!isUpdateActivated" class="table table-hover">
-  <thead >
-    <tr>
-      <th width="15%">Title</th>
-      <th width="15%">Author</th>
-      <th width="40%">Description</th>
-      <th width="15%">Published</th>
-      <th width="15%" *ngIf="isLoggedIn">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let book of books$ | async">
-      <td scope="row">{{book.title}}</td>
-      <td>{{book.author}}</td>
-      <td>{{book.description}}</td>
-      <td>{{book.published}}</td>
-      <td *ngIf="isLoggedIn">
-        <!--<button [routerLink]="['edit-book', book.id]">Edit</button> &nbsp; &nbsp;-->
-        <button (click)="showUpdateForm(book)">Edit</button> &nbsp; &nbsp;
-        <button (click)="deleteBook(book.id)">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="containerPane">
+  <h1 *ngIf="!isUpdateActivated">Book Details</h1>
+  <div *ngIf="!isUpdateActivated">
+    <button class="btn buttonSuccess" routerLink="add-book" routerLinkActive="active" style="margin-left: 89%;">Add Book</button>
+  </div>
+  <br>
+  <table *ngIf="!isUpdateActivated" class="booksTable">
+    <thead >
+      <tr>
+        <th width="15%">Title</th>
+        <th width="15%">Author</th>
+        <th width="45%">Description</th>
+        <th width="12%">Published</th>
+        <th width="12%">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books$ | async">
+        <td scope="row">&nbsp;{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.description}}</td>
+        <td>&nbsp;{{book.published}}</td>
+        <td>
+          <!--<button [routerLink]="['edit-book', book.id]">Edit</button> &nbsp; &nbsp;-->
+          &nbsp;<button class="btn buttonPrimary" (click)="showUpdateForm(book)">Edit</button> &nbsp; &nbsp;
+          <button class="btn buttonDanger" (click)="deleteBook(book.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-<div *ngIf="isUpdateActivated" style="margin-top: 50px; margin-left: 50px;">
-  <h4>Update Book Details</h4>
-  <form (ngSubmit)="updateBook(updateForm)" #updateForm="ngForm">
-    <div class="form-group">
-      <label for="name">Book Title</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        class="form-control"
-        required
-        [(ngModel)]="bookToBeUpdated.title"
-        style="width: 400px"/>
+  <div *ngIf="isUpdateActivated" class="formPane">
+    <div class="formContent">
+    <div class="formDiv">
+    <h2 class="formHeader">Update Book Details</h2>
+    <form (ngSubmit)="updateBook(updateForm)" #updateForm="ngForm">
+      <div class="form-group">
+        <p for="name">Book Title</p>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="form-control"
+          required
+          [(ngModel)]="bookToBeUpdated.title"/>
+      </div>
+      <div class="form-group">
+        <p for="side">Author</p>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          class="form-control"
+          required
+          [(ngModel)]="bookToBeUpdated.author"/>
+      </div>
+      <div class="form-group">
+        <p for="side">Description</p>
+        <input
+          type="text"
+          id="description"
+          name="description"
+          class="form-control"
+          required
+          [(ngModel)]="bookToBeUpdated.description"/>
+      </div>
+      <div class="form-group">
+        <p for="side">Published</p>
+        <input
+          type="text"
+          id="published"
+          name="published"
+          class="form-control"
+          required
+          [(ngModel)]="bookToBeUpdated.published"/>
+      </div>
+      <br>
+      <button [disabled]="updateForm.invalid" class="btn buttonPrimary" type="submit">Update</button>
+    </form>
     </div>
-    <div class="form-group">
-      <label for="side">Author</label>
-      <input
-        type="text"
-        id="author"
-        name="author"
-        class="form-control"
-        required
-        [(ngModel)]="bookToBeUpdated.author"
-        style="width: 400px"/>
-    </div>
-    <div class="form-group">
-      <label for="side">Description</label>
-      <textarea
-        type="text"
-        id="description"
-        name="description"
-        class="form-control"
-        required
-        [(ngModel)]="bookToBeUpdated.description"
-        style="width: 400px"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="side">Published</label>
-      <input
-        type="text"
-        id="published"
-        name="published"
-        class="form-control"
-        required
-        [(ngModel)]="bookToBeUpdated.published"
-        style="width: 400px"/>
-    </div>
-    <button [disabled]="updateForm.invalid" class="btn btn-primary" type="submit">Update</button>
-  </form>
+  </div>
+  </div>
 </div>

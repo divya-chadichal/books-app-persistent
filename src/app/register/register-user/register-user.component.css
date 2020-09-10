@@ -1,0 +1,12 @@
+button.btn {
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.loginContent {
+    height: 77%;
+}
+
+.loginPane {
+    margin-top: 30px;
+}

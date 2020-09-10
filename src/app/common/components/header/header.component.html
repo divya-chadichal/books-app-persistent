@@ -1,6 +1,12 @@
-<div class="headerPane">
-    <span class="appName">Books Shared Application </span>
-    <a class="appButton" routerLink="/login" *ngIf="!isLoggedIn">Login</a>
-    <a class="appButton" routerLink="/register">Register</a>
-    <a class="appButton" (click)="logout()" *ngIf="isLoggedIn">Logout</a>
+<div class="headerPane" color="primary" id="headerSection">
+    <div class="headerName"><span class="appName">Books Shared Application </span></div>
+    <div class="headerButton">
+        <label class="switch" style="margin-left: 60%;">
+            <input type="checkbox" (click)="onSetTheme()">
+            <span class="slider round"></span>
+        </label> &nbsp;
+        <button style="margin-left: 2%;"  class="appButton" routerLink="/login" *ngIf="!isLoggedIn">Login</button>&nbsp;
+        <button style="margin-left: 63%;"  class="appButton" (click)="logout()" *ngIf="isLoggedIn">Logout</button> &nbsp;
+        <button style="margin-left: 1%;" class="appButton" routerLink="/register" *ngIf="!isLoggedIn">Register</button>&nbsp;
+    </div>
 </div>

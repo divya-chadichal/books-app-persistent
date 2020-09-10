@@ -4,14 +4,11 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
-var users = [];
-
 @Injectable({
   providedIn: 'root'
 })
 
 export class RegisterService {
-
 
   constructor(private http : HttpClient) { }
 
@@ -20,6 +17,5 @@ export class RegisterService {
     .pipe(map(data => {
         return data;
     }));
-
   }
 }

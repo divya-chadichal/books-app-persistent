@@ -14,11 +14,8 @@ import { authSelector } from '../store/selectors/login-selector';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
   books$: Observable<Book[]>;
-  
   bookToBeUpdated: Book;
-
   isUpdateActivated = false;
   isLoggedIn: boolean;
   
