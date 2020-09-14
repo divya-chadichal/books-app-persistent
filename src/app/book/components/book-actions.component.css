@@ -1,0 +1,41 @@
+button.btn {
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.formContent {
+    height: 80%;
+    width: 40%;
+}
+
+button:disabled {
+    background-color: gray;
+    color: darkslategray;
+    border: none;
+    cursor: not-allowed;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .formPane {
+        margin-top: 80px;
+    }
+
+    .formContent {
+        height: 55%;
+        width: 85%;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+    .formContent {
+        height: 70%;
+        width: 85%;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 360px) {
+    .formContent {
+        height: 70%;
+        width: 85%;
+    }
+}

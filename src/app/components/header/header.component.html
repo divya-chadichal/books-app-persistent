@@ -1,0 +1,12 @@
+<div class="headerPane" color="primary" id="headerSection">
+    <div class="headerName"><span class="appName">Books Shared Application </span></div>
+    <div class="headerButton">
+        <button id="loginLink" class="appButton logInButton" routerLink="/login" *ngIf="!isLoggedIn">Login</button>
+        <button class="appButton logOutButton" (click)="logout()" *ngIf="isLoggedIn">Logout</button>
+        <button class="appButton regThemeButton" routerLink="/register" *ngIf="!isLoggedIn">Register</button>
+        <label class="switch" style="margin-left: 1%;">
+            <input id="darkTheme" type="checkbox" (click)="onSetTheme()" [formControl]="darkTheme">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>

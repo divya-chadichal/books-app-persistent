@@ -1,0 +1,260 @@
+.headerPane {
+    width: 98%;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    font-size: large;
+    font-family: 'Segoe UI';
+    margin: 0.5%;
+}
+
+.appName {
+    font-size: xx-large;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.headerName {
+    width: 50%; 
+    float: left;
+}
+
+.headerButton {
+    margin-top: 10px;
+    float: right;
+    width: 50%;
+}
+
+.appButton {
+    background-color: white;
+    color: #E74C3C;
+    font-size: large;
+    border: none;
+    cursor: pointer;
+    border-radius: 3em;
+    width: 80px;
+    text-align: center;
+    height: 25px;
+    text-decoration: none;
+}
+
+.slider.round {
+    margin-top: 5px;
+    border-radius: 34px;
+  }
+  
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 25px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(247, 221, 221);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #B0B0B0;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #B0B0B0;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+.logInButton {
+  margin-left: 66%;
+}
+
+.logOutButton {
+  margin-left: 78%;
+}
+
+.regThemeButton {
+  margin-left: 1%;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .headerPane {
+    width: 98%;
+    height: 50px;
+    font-size: large;
+  }
+
+  .appName {
+      font-size: 28px;
+      margin-left: 10px;
+      font-weight: bold;
+  }
+
+  .headerName {
+      width: 50%; 
+      float: left;
+  }
+
+  .headerButton {
+      margin-top: 10px;
+      float: right;
+      width: 50%;
+  }
+
+  .appButton {
+      font-size: large;
+      width: 75px;
+      height: 25px;
+  }
+
+  .logInButton {
+    margin-left: 40%;
+  }
+  
+  .logOutButton {
+    margin-left: 60%;
+  }
+  
+  .regThemeButton {
+    margin-left: 1%;
+  }
+
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+  .headerPane {
+    width: 98%;
+    height: 50px;
+    font-size: small;
+  }
+
+  .appName {
+      font-size: 28px;
+      margin-left: 10px;
+      font-weight: bold;
+  }
+
+  .headerName {
+      width: 50%; 
+      float: left;
+  }
+
+  .headerButton {
+      margin-top: 10px;
+      float: right;
+      width: 50%;
+  }
+
+  .appButton {
+      font-size: large;
+      width: 60px;
+      height: 25px;
+  }
+
+  .logInButton {
+    margin-left: 50%;
+  }
+  
+  .logOutButton {
+    margin-left: 60%;
+  }
+  
+  .regThemeButton {
+    margin-left: 1%;
+  }
+
+  .slider.round {
+    margin-top: 0px;
+  }
+
+  .slider {
+    bottom: 3px;
+  }
+
+}
+
+@media (min-width: 321px) and (max-width: 360px) {
+  .headerPane {
+    width: 98%;
+    height: 50px;
+    font-size: small;
+  }
+
+  .appName {
+      font-size: 18px;
+      margin-left: 10px;
+      font-weight: bold;
+  }
+
+  .headerName {
+      width: 50%; 
+      float: left;
+  }
+
+  .headerButton {
+      margin-top: 10px;
+      float: right;
+      width: 50%;
+  }
+
+  .appButton {
+      font-size: small;
+      width: 60px;
+      height: 25px;
+  }
+
+  .logInButton {
+    margin-left: 0%;
+  }
+  
+  .logOutButton {
+    margin-left: 1%;
+  }
+  
+  .regThemeButton {
+    margin-left: 1%;
+  }
+
+  .slider.round {
+    margin-top: 0px;
+  }
+
+  .slider {
+    bottom: 3px;
+  }
+
+}
+  

@@ -1,0 +1,30 @@
+<div class="containerPane">
+  <h1>Book Details</h1>
+  <div>
+    <button id="addBook" class="btn buttonSuccess addButton" routerLink="book-actions" routerLinkActive="active">Add Book</button>
+  </div>
+  <br>
+  <table class="booksTable">
+    <thead >
+      <tr>
+        <th width="15%">Title</th>
+        <th width="15%">Author</th>
+        <th width="45%">Description</th>
+        <th width="12%">Published</th>
+        <th width="12%" *ngIf="isLoggedIn">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books$ | async">
+        <td scope="row">&nbsp;{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.description}}</td>
+        <td>&nbsp;{{book.published}}</td>
+        <td *ngIf="isLoggedIn">
+          <button class="btn buttonPrimary" [routerLink]="['book-actions']" [state]="book">Edit</button> &nbsp; &nbsp;
+          <button class="btn buttonDanger" (click)="deleteBook(book.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

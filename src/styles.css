@@ -1,6 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #E74C3C;
+    --background-color: white;
+    --text-color:white;
+  }
+
 .alert-danger { 
     color: red;
+}
+
+body {
+    background-color: var(--background-color);
 }
 
 html, body {
@@ -22,7 +32,7 @@ html, body {
 
 input{
     color: #333;
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin: 0 auto;
     border-radius: 0.2rem;
     background-color: rgb(255, 255, 255);
@@ -45,6 +55,7 @@ input{
     font-size: 0.7rem;
     line-height: 1;
     border-radius: .25rem;
+    cursor: pointer;
 }
 
 .buttonPrimary {
@@ -97,14 +108,6 @@ input{
     text-align: center;
 }
 
-.dark-mode {
-    background-color:#B0B0B0;
-}
-
-.dark-mode-header {
-    background-color: #484848 !important;
-}
-
 .formPane {
     width: 100%;
     height: 100%;
@@ -134,7 +137,81 @@ input{
     text-align: center;
 }
 
-textarea {
-    width: 90%;
-    height: 40px;
+@media (min-width: 481px) and (max-width: 768px) {
+    :host {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+    }
+    
+    html, body {
+        height: 100% !important;
+        width: 768px !important;
+        overflow-y: scroll;
+    }
+
+    .loginContent {
+        width: 85%;
+        height: 50%;
+    }
+
+    .loginDiv {
+        width: 80%;
+        height: 80%;
+        margin-left: 15%;
+    }
 }
+
+@media (min-width: 361px) and (max-width: 480px) {
+    :host {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+    }
+
+    html, body {
+        height: 100% !important;
+        width: 480px !important;
+        overflow-y: scroll;
+    }
+
+    .loginContent {
+        width: 80%;
+        height: 75%;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 360px) {
+    :host {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+    }
+
+    html, body {
+        height: 100%;
+        width: 360px;
+        overflow-y: scroll;
+    }
+
+    .loginContent {
+        width: 85%;
+        height: 75%;
+    }
+}
+

@@ -1,0 +1,57 @@
+h1{
+    text-align: center;
+    color: darkred;
+}
+
+.booksTable {
+    width: 90%;
+    margin-left: 5%;
+    border-spacing: 0;
+}
+
+.booksTable th{
+    background: #b8d1f3;
+    border: none;
+}
+
+.booksTable tr{
+    background: #b8d1f3;
+    border: none;
+    height: 55px;
+}
+
+.booksTable tr:nth-child(odd){ 
+    background: #f1f3f5;
+}
+
+.booksTable tr:nth-child(even){
+    background: #dae5f4;
+}
+
+.addButton {
+    margin-left: 89%
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .addButton {
+        margin-left: 85%;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+    .addButton {
+        margin-left: 85%;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 360px) {
+    .addButton {
+        margin-left: 75%;
+    }
+
+    table{
+        overflow-y:scroll;
+        display:block;
+    }
+}
+

@@ -1,19 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './common/components/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { EffectsModule } from '@ngrx/effects';
-import { registerReducer } from './store/reducers/register-reducer';
-import { RegisterEffects } from './store/effects/register-effects';
-import { UserEffects } from './store/effects/login-effects';
-import { userReducer } from './store/reducers/login-reducer';
+import { registerReducer } from './register/store/reducers/register-reducer';
+import { RegisterEffects } from './register/store/effects/register-effects';
+import { UserEffects } from './login/store/effects/login-effects';
+import { userReducer } from './login/store/reducers/login-reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeService } from './core/services/theme.service';
 
 @NgModule({
   declarations: [
@@ -27,11 +27,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({"user": userReducer, "register": registerReducer}),
+    StoreModule.forRoot({user: userReducer, register: registerReducer}),
     EffectsModule.forRoot([UserEffects, RegisterEffects]),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,30 @@
+button.btn {
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.loginContent {
+    height: 77%;
+}
+
+.loginPane {
+    margin-top: 30px;
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .loginContent {
+        height: 60%;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 480px) {
+    .loginContent {
+        height: 100%;
+    }
+}
+
+@media (min-width: 321px) and (max-width: 360px) {
+    .loginContent {
+        height: 100%;
+    }
+}
