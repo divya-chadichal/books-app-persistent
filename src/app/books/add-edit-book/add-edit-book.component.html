@@ -2,42 +2,6 @@
   <div class="formContent">
     <div class="formDiv">
       <h2 class="formHeader">Add Book Details</h2>
-        <!--<form [formGroup]="form">
-          <div>
-              <p for="title">Title</p>
-              <input type="text" formControlName="title" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
-              <div *ngIf="submitted && f.title.errors" class="alert-danger">
-                  <div *ngIf="f.title.errors.required">Title is required</div>
-              </div>
-          </div>
-          <div>
-              <p for="author">Author</p>
-              <input type="text" formControlName="author"/>
-              <div *ngIf="submitted && f.author.errors" class="alert-danger">
-                <div *ngIf="f.author.errors.required">Author is required</div>
-              </div>
-          </div>
-          <div>
-            <p for="description">Description</p>
-            <input type="text" formControlName="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" />
-            <div *ngIf="submitted && f.description.errors" class="alert-danger">
-              <div *ngIf="f.description.errors.required">Password is required</div>
-            </div>
-          </div>
-          <div>
-            <p for="published">Published</p>
-            <input type="text" formControlName="published" [ngClass]="{ 'is-invalid': submitted && f.published.errors }" />
-            <div *ngIf="submitted && f.published.errors" class="alert-danger">
-              <div *ngIf="f.published.errors.required">Password is required</div>
-            </div>
-          </div>
-          <br>
-          <div>
-              <button class="btn buttonPrimary" (click)="onSubmit()">Add</button>&nbsp; &nbsp;
-              <button class="btn buttonDanger" routerLink="/home">Cancel</button>
-          </div>
-      </form>-->
-
       <form #bookForm="ngForm">
         <div class="form-group">
           <p for="title">Title</p>
@@ -85,14 +49,14 @@
             [disabled]="bookForm.invalid"
             *ngIf="showAdd"
             class="btn buttonPrimary" 
-            type="submit"
+            type="button"
             (click)="onSubmit(bookForm, 'add')">Add
         </button> &nbsp;
         <button
             [disabled]="bookForm.invalid"
             *ngIf="!showAdd"
             class="btn buttonPrimary"
-            type="submit"
+            type="button"
             (click)="onSubmit(bookForm, 'edit')">Update
         </button>&nbsp;
         <button class="btn buttonDanger" routerLink="/home">Cancel</button>

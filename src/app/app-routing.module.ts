@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const loginModule = () => import('./login/login.module').then(x => x.LoginModule);
 const registerModule = () => import('./register/register.module').then(x => x.RegisterModule);
-const bookModule = () => import('./book/book.module').then(x => x.BookModule);
+const booksModule = () => import('./books/books.module').then(x => x.BooksModule);
 
 const routes: Routes = [
   {
@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: bookModule
+    loadChildren: booksModule
   }
 ];
 

@@ -8,11 +8,11 @@
       "id": 2
     },
     {
-      "email": "divya@gmail.com",
-      "password": "$2a$10$QPfKe/E79DQpil/gCXRnlOB2psmKZ.E1/BWU62pba7LlxrNdL85eG",
-      "firstname": "Divya",
-      "lastname": "Chadichal",
-      "id": 3
+      "email": "john@gmail.com",
+      "password": "$2a$10$JDWr4b3LgsQeIxymXMTkuuf3WHZzyLlYfdp.m4Wwa1KFjckGADM26",
+      "firstname": "John",
+      "lastname": "Matthews",
+      "id": 4
     }
   ],
   "booksList": [
@@ -21,16 +21,14 @@
       "title": "Born A Crime",
       "author": "Trevor Noah",
       "description": "Trevor Noah’s unlikely path from apartheid South Africa to the desk of The Daily Show began with a criminal act: his birth.",
-      "published": "27 October 2017",
-      "name": "Born A Crime"
+      "published": "27 October 2017"
     },
     {
       "id": 1,
       "title": "Half of a Yellow Sun",
       "author": "Chimamanda Ngozi",
       "description": "With effortless grace, Chimamanda Ngozi Adichie illuminates a seminal moment in modern African history.",
-      "published": "4 January 1998",
-      "name": "Half of a Yellow Sun"
+      "published": "4 January 1998"
     },
     {
       "id": 2,

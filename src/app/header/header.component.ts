@@ -1,7 +1,7 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { authSelector } from '../../login/store/selectors/login-selector';
-import { ThemeService } from '../../core/services/theme.service';
+import { authSelector } from '../login/store/selectors/login-selector';
+import { ThemeService } from '../core/services/theme.service';
 import { FormControl } from '@angular/forms';
 
 @Component({

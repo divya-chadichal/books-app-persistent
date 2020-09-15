@@ -13,7 +13,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './login/store/effects/login-effects';
 import { RegisterEffects } from './register/store/effects/register-effects';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './components/header/header.component';
+import { HeaderComponent } from './header/header.component';
 import { Router, Routes } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -26,7 +26,7 @@ describe('AppComponent', () => {
 
   const loginModule = () => import('./login/login.module').then(x => x.LoginModule);
   const registerModule = () => import('./register/register.module').then(x => x.RegisterModule);
-  const bookModule = () => import('./book/book.module').then(x => x.BookModule);
+  const booksModule = () => import('./books/books.module').then(x => x.BooksModule);
 
   const routes: Routes = [
     {
@@ -44,7 +44,7 @@ describe('AppComponent', () => {
     },
     {
       path: 'home',
-      loadChildren: bookModule
+      loadChildren: booksModule
     }
   ];
 

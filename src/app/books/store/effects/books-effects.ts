@@ -3,7 +3,7 @@ import { concatMap, map, tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { bookActionTypes } from '../actions/books-actions';
-import { BookService } from '../../../core/services/book.service';
+import { BooksService } from '../../../core/services/books.service';
 
 @Injectable()
 export class BookEffects {
@@ -36,10 +36,11 @@ export class BookEffects {
   updateBook$ = createEffect(() =>
     this.actions$.pipe(
       ofType(bookActionTypes.updateBook),
-      concatMap((action) => this.bookService.updateBook(action.update.id, action.update.changes))
+      concatMap((action) => this.bookService.updateBook(action.update.id, action.update.changes)),
+      tap(() => this.router.navigateByUrl('/home'))
     ),
     {dispatch: false}
   );
 
-  constructor(private bookService: BookService, private actions$: Actions, private router: Router) {}
+  constructor(private bookService: BooksService, private actions$: Actions, private router: Router) {}
 }

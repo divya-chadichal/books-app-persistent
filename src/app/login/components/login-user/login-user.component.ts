@@ -36,7 +36,7 @@ export class LoginUserComponent implements OnInit {
   onSubmit(): void {
     this.submitted = true;
     const payload = { email: this.f.email.value, password: this.f.password.value};
-    if( this.form.valid ) {
+    if (this.form.valid) {
       this.store.dispatch(login({ user: payload})); // Dispatch Login Action
       this.store.select(authSelector).subscribe(res =>  {
         this.loginResponse = res; // LoginSuccess or LoginFailure Response
@@ -46,12 +46,12 @@ export class LoginUserComponent implements OnInit {
   }
 
   // Navigate/catch error
-  navigate(response): void {
-    if( response.loginToken ) {
+  navigate(response: any): void {
+    if (response.loginToken) {
       localStorage.setItem('accessToken', response.loginToken);
       this.router.navigateByUrl('/home'); // If login success redirect to Home page
     } else {
-        if( localStorage.getItem('accessToken') ) {
+        if (localStorage.getItem('accessToken')) {
           localStorage.removeItem('accessToken');
         }
         this.error = response.message; // capture error

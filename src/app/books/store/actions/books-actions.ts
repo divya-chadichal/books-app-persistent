@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { Update } from '@ngrx/entity';
-import { Book } from '../../../models/books';
+import { Book } from '../../../models/book';
 
 export const loadBooks = createAction(
 '[Books List] Load Books List via Service',

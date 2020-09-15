@@ -1,7 +1,7 @@
 <div class="containerPane">
   <h1>Book Details</h1>
   <div>
-    <button id="addBook" class="btn buttonSuccess addButton" routerLink="book-actions" routerLinkActive="active">Add Book</button>
+    <button *ngIf="isLoggedIn" id="addBook" class="btn buttonSuccess addButton" routerLink="add-edit-book" routerLinkActive="active">Add Book</button>
   </div>
   <br>
   <table class="booksTable">
@@ -21,7 +21,7 @@
         <td>{{book.description}}</td>
         <td>&nbsp;{{book.published}}</td>
         <td *ngIf="isLoggedIn">
-          <button class="btn buttonPrimary" [routerLink]="['book-actions']" [state]="book">Edit</button> &nbsp; &nbsp;
+          <button class="btn buttonPrimary" [routerLink]="['add-edit-book']" [state]="book">Edit</button> &nbsp; &nbsp;
           <button class="btn buttonDanger" (click)="deleteBook(book.id)">Delete</button>
         </td>
       </tr>

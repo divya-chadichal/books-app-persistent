@@ -37,21 +37,21 @@ export class RegisterUserComponent implements OnInit {
   onSubmit(): void {
     this.submitted = true;
     // Register user payload
-    const payload = { 
+    const payload = {
       firstname: this.f.firstname.value,
       lastname: this.f.lastname.value,
       email: this.f.email.value,
       password: this.f.password.value
     };
 
-    if( this.form.valid ) {
+    if (this.form.valid) {
       this.store.dispatch(RegisterActions.register({ user: payload})); // Dispatch register action
       this.store.select(register).subscribe( response => {
       this.registerResponse = response;
-      if( this.registerResponse.register.token ) {
+      if (this.registerResponse.register.token) {
         this.navigate(); // call navigate after successful registeration
       } else {
-        if( this.registerResponse.register.message ) {
+        if (this.registerResponse.register.message) {
           this.error = this.registerResponse.register.message.error; // catch error
         }
       }

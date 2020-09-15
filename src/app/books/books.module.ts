@@ -1,17 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BookComponent } from './book.component';
-import { BookRoutingModule } from './book-routing.module';
-import { BookService } from '../core/services/book.service';
+import { BooksComponent } from './books.component';
+import { BookRoutingModule } from './books-routing.module';
+import { BooksService } from '../core/services/books.service';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { BookEffects } from './store/effects/books-effects';
 import { bookReducer } from './store/reducers/books-reducer';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BookActionsComponent } from './components/book-actions.component';
+import { AddEditBookComponent } from './add-edit-book/add-edit-book.component';
 
 @NgModule({
-  declarations: [BookComponent, BookActionsComponent],
+  declarations: [BooksComponent, AddEditBookComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -20,9 +20,9 @@ import { BookActionsComponent } from './components/book-actions.component';
     StoreModule.forFeature('books', bookReducer),
     EffectsModule.forFeature([BookEffects])
   ],
-  providers: [BookService],
+  providers: [BooksService],
   bootstrap: [],
-  exports: [BookComponent, BookActionsComponent]
+  exports: [BooksComponent, AddEditBookComponent]
 })
 
-export class BookModule { }
+export class BooksModule { }

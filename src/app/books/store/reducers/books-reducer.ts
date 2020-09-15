@@ -1,6 +1,6 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on } from '@ngrx/store';
-import { Book } from '../../../models/books';
+import { Book } from '../../../models/book';
 import { bookActionTypes } from '../actions/books-actions';
 
 export interface BookState extends EntityState<Book> {

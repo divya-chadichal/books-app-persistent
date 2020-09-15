@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Book } from '../models/books';
+import { Book } from '../models/book';
 import { Store } from '@ngrx/store';
 import { getAllBooksList } from './store/selectors/books.selector';
 import { bookActionTypes } from './store/actions/books-actions';
 import { authSelector } from '../login/store/selectors/login-selector';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './book.component.html',
-  styleUrls: ['./book.component.css']
+  selector: 'app-books',
+  templateUrl: './books.component.html',
+  styleUrls: ['./books.component.css']
 })
 
-export class BookComponent implements OnInit {
+export class BooksComponent implements OnInit {
   books$: Observable<Book[]>;
   isLoggedIn: boolean;
 
@@ -26,7 +26,7 @@ export class BookComponent implements OnInit {
 
   // Delete Book function
   deleteBook(bookId: number): void {
-    this.store.dispatch(bookActionTypes.deleteBook({bookId}));// dispatch delete book action
+    this.store.dispatch(bookActionTypes.deleteBook({bookId})); // dispatch delete book action
   }
 
 }
