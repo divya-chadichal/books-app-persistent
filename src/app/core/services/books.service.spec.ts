@@ -19,7 +19,6 @@ describe('BooksService', () => {
 
   it('should return all books list', () => {
     return service.getBooks().toPromise().then( (result: any) => {
-      console.log(result);
       expect(result);
     });
   });
@@ -32,7 +31,6 @@ describe('BooksService', () => {
       description: 'With effortless grace, Chimamanda Ngozi Adichie illuminates a seminal moment in modern African history.',
       published: '4 January 1998'
     };
-
     return service.updateBook(1, book).toPromise().then( (result: any) => {
       expect(result);
     });

@@ -6,7 +6,8 @@ import { AuthGuardService } from '../core/services/authguard.service';
 
 const routes: Routes = [
   { path: '', component: BooksComponent },
-  { path: 'add-edit-book', component: AddEditBookComponent, canActivate: [AuthGuardService] }
+  { path: 'add-edit-book', component: AddEditBookComponent, canActivate: [AuthGuardService] },
+  { path: 'add-edit-book/:id', component: AddEditBookComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({

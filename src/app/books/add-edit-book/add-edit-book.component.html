@@ -11,11 +11,6 @@
             name="title"
             required
             [(ngModel)]="book.title"/>
-            <div *ngIf="bookForm.invalid && submitted" class="alert-danger">
-              <div *ngIf="name.errors.required">
-                  Name is required.
-              </div>
-          </div>
         </div>
         <div class="form-group">
           <p for="author">Author</p>

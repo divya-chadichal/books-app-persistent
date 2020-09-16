@@ -27,6 +27,14 @@ export const bookReducer = createReducer(
     );
   }),
 
+  // book loaded reducer
+  on(bookActionTypes.bookLoaded, (state, action) => {
+    return adapter.setAll(
+      action.book,
+      {...state, bookLoaded: true}
+    );
+  }),
+
   // add book reducer
   on(bookActionTypes.addBook, (state, action) => {
     return adapter.addOne(action.book, state);
@@ -43,4 +51,4 @@ export const bookReducer = createReducer(
   })
 );
 
-export const { selectAll, selectIds } = adapter.getSelectors();
+export const { selectAll, selectEntities } = adapter.getSelectors();

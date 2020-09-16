@@ -8,7 +8,7 @@ import { authSelector } from '../../store/selectors/login-selector';
 @Component({
   selector: 'app-login-user',
   templateUrl: './login-user.component.html',
-  styleUrls: ['./login-user.component.css']
+  styleUrls: ['./login-user.component.scss']
 })
 export class LoginUserComponent implements OnInit {
   form: FormGroup;

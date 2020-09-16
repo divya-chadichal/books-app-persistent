@@ -16,6 +16,14 @@ export class BookEffects {
     )
   );
 
+  loadBook$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(bookActionTypes.loadBook),
+      concatMap((action) => this.bookService.getBook(action.bookId)),
+      map(book => bookActionTypes.bookLoaded({book: [book]}))
+    )
+  );
+
   addBook$ = createEffect(() =>
     this.actions$.pipe(
       ofType(bookActionTypes.addBook),

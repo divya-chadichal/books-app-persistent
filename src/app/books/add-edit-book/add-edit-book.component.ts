@@ -1,31 +1,40 @@
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Update } from '@ngrx/entity';
 import { Book } from '../../models/book';
-import { addBook, bookActionTypes } from '../store/actions/books-actions';
+import { addBook, bookActionTypes, bookLoaded, loadBook } from '../store/actions/books-actions';
 import { NgForm } from '@angular/forms';
+import { getBookDetails } from '../store/selectors/books.selector';
 
 @Component({
   selector: 'app-add-edit-book',
   templateUrl: './add-edit-book.component.html',
-  styleUrls: ['./add-edit-book.component.css']
+  styleUrls: ['./add-edit-book.component.scss']
 })
 
 export class AddEditBookComponent implements OnInit {
   submitted = false;
   public book = new Book();
   showAdd = true;
+  id: string;
+  tempBook: Book[];
 
-  constructor(private store: Store, private router: Router) {
-    if (!localStorage.getItem('accessToken')) {
-      this.router.navigateByUrl('/login');
+  constructor(private store: Store, private router: Router, private route: ActivatedRoute) {
+    this.route.paramMap.subscribe((params) => {
+      this.id = params.get('id'); // Get edit book id
+    });
+
+    if (this.id) {
+      this.showAdd = false; // Hide Add Book button
+
+      this.store.dispatch(loadBook({bookId: this.id}));
+      this.store.select(getBookDetails).subscribe( response => {
+        this.tempBook = response;
+        this.book = {...this.tempBook[0]}; // Book details to be updated
+      });
     }
 
-    if (this.router.getCurrentNavigation().extras.state){
-      this.showAdd = false;
-      this.book = {...this.router.getCurrentNavigation().extras.state} as Book; // get book details to be updated
-    }
   }
 
   ngOnInit(): void {}

@@ -11,6 +11,16 @@ export const booksLoaded = createAction(
   props<{books: Book[]}>()
 );
 
+export const loadBook = createAction(
+  '[Book List] Load Book via Service',
+  props<{bookId: string | number}>()
+  );
+
+export const bookLoaded = createAction(
+  '[Book Effect] Book Loaded Successfully',
+  props<{book: Book[]}>()
+);
+
 export const addBook = createAction(
   '[Add Book Component] Add Book',
   props<{book: Book}>()
@@ -31,5 +41,7 @@ export const bookActionTypes = {
   booksLoaded,
   addBook,
   deleteBook,
-  updateBook
+  updateBook,
+  loadBook,
+  bookLoaded
 };

@@ -21,7 +21,7 @@
         <td>{{book.description}}</td>
         <td>&nbsp;{{book.published}}</td>
         <td *ngIf="isLoggedIn">
-          <button class="btn buttonPrimary" [routerLink]="['add-edit-book']" [state]="book">Edit</button> &nbsp; &nbsp;
+          <button class="btn buttonPrimary" [routerLink]="['add-edit-book', book.id]">Edit</button> &nbsp; &nbsp;
           <button class="btn buttonDanger" (click)="deleteBook(book.id)">Delete</button>
         </td>
       </tr>

@@ -17,6 +17,11 @@ export class BooksService {
     return this.http.get<Book[]>(environment.booksUrl);
   }
 
+  // Get single book details
+  getBook(bookId: string | number): Observable<Book> {
+    return this.http.get<Book>(`${environment.booksUrl}/${bookId}`);
+  }
+
   // Add book call to json-server
   addBook(payload: Book): Observable<Book> {
     return this.http.post<Book>(environment.booksUrl, payload);
